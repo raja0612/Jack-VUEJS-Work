@@ -1,0 +1,19 @@
+{
+    "data": [{
+        "question": "What is your favourite color ?",
+        "options": ["red","blue","white","green"],
+        "answer": "red"
+    },
+    {
+        "question": "What is your favourite car ?",
+        "options": ["bmw","blue","white","green"],
+        "answer": "red"
+    },
+    {
+        "question": "What is your favourite pet ?",
+        "options": ["red","blue","white","green"],
+        "answer": "red"
+    }]
+}
+
+// o/p:  https://www.fyrebox.com/play/quiz1_qo9ZEY6DW

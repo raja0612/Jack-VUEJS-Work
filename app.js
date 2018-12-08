@@ -55,6 +55,10 @@ new Vue({
 
       console.log('results...', this.results)
 
+    },
+    reTake () {
+      location.reload();
     }
   }
+  
 });

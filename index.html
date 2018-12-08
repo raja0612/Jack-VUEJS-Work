@@ -5,14 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>QUIZ</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <div id="app">
-         <p>{{message}}</p>
+        <div class="container">
+            <h3 class="text-center">{{name}}</h3>
+           
+            <div v-for="(each,index) in quiz">
+              <div v-if="index === questionNumber">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">{{ each.question }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12 col-sm-6 text-center">
+                            <button class="btn btn-primary btn-lg custom" 
+                                @click="userAnswer(each.options[0], index)">
+                                {{ each.options[0] }}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 text-center">
+                            <button class="btn btn-primary btn-lg custom"
+                            @click="userAnswer(each.options[1], index)">
+                                {{ each.options[1] }}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 text-center">
+                            <button class="btn btn-primary btn-lg custom"
+                            @click="userAnswer(each.options[2], index)">
+                                {{ each.options[2] }}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 text-center">
+                            <button class="btn btn-primary btn-lg custom"
+                            @click="userAnswer(each.options[3], index)">
+                                {{ each.options[3] }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
-<script src="app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
-</html>
 
+</html>

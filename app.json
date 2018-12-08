@@ -6,12 +6,12 @@
     },
     {
         "question": "What is your favourite car ?",
-        "options": ["bmw","blue","white","green"],
+        "options": ["BMW","Honda","Cadillac","AUDI"],
         "answer": "red"
     },
     {
         "question": "What is your favourite pet ?",
-        "options": ["red","blue","white","green"],
+        "options": ["Dog","Cat","Parrot","Snake"],
         "answer": "red"
     }]
 }

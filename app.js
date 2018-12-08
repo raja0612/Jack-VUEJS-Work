@@ -4,7 +4,8 @@ new Vue({
     name:'QUIZ',
     quiz: [],
     questionNumber: 0,
-    userAnswers: []
+    showResults: false,
+    results: []
   },
   mounted () {
     console.log('mounted')
@@ -14,17 +15,44 @@ new Vue({
       console.log('response', response.data)
       this.quiz = response.data.data
       console.log('this.quiz ', this.quiz)
+      console.log('this.quiz.length ', this.quiz.length)
     })
     .catch(error => {
       console.log(error);
     });
   },
   methods : {
-    userAnswer (answer, questionNumber){
-      console.log('userAnswer....', answer, questionNumber)
-      this.userAnswers.push(answer)
+    userAnswer (answer, questionNumber, question){
+      console.log('userAnswer....', answer, questionNumber,question)
       console.log('userAnswers....', this.userAnswers)
-      this.questionNumber++
+      if (questionNumber === this.quiz.length-1){
+         console.log('Need to show Results page')
+         this.showResults = true
+      } else {
+        console.log('still questions are left in quiz')
+        this.questionNumber++
+      }
+
+      if (answer === this.quiz[questionNumber].answer) {
+         console.log('user answer is correct')
+         let result = {
+           'questionNumber': questionNumber,
+           'question': question,
+           'result': true
+         }
+         this.results.push(result)
+      } else {
+        console.log('user answer is not correct')
+        let result = {
+          'questionNumber': questionNumber,
+          'question': question,
+          'result': false
+        }
+        this.results.push(result)
+      }
+
+      console.log('results...', this.results)
+
     }
   }
 });

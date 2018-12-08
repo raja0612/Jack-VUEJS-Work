@@ -1,17 +1,21 @@
 {
     "data": [{
-        "question": "What is your favourite color ?",
+        "question": "What is your favourite Color. ?",
         "options": ["red","blue","white","green"],
         "answer": "red"
     },
     {
-        "question": "What is your favourite car ?",
+        "question": "What is your favourite Car. ?",
         "options": ["BMW","Honda","Cadillac","AUDI"],
-        "answer": "red"
+        "answer": "Honda"
     },
     {
-        "question": "What is your favourite pet ?",
-        "options": ["Dog","Cat","Parrot","Snake"],
-        "answer": "red"
+        "question": "What is your favourite Pet.?",
+        "options": ["Dog","Cat","Parrot","Dove"],
+        "answer": "Dog"
+    },{
+        "question": "What is your Ongunnaru Neyyi.?",
+        "options": ["Pogunuri Gitta","Plate","Parrot","LOL"],
+        "answer": "LOL"
     }]
 }

@@ -38,6 +38,7 @@ new Vue({
          let result = {
            'questionNumber': questionNumber,
            'question': question,
+           'userAnswer': answer,
            'result': true
          }
          this.results.push(result)
@@ -46,6 +47,7 @@ new Vue({
         let result = {
           'questionNumber': questionNumber,
           'question': question,
+          'userAnswer': answer,
           'result': false
         }
         this.results.push(result)

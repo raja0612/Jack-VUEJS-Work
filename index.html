@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>QUIZ</title>
-    <link href="styles.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -19,7 +18,7 @@
             <h3 class="text-center">{{name}}</h3>
             <div v-for="(each,index) in quiz">
                 <transition name="flip" mode="out-in">
-                    <div v-if="index === questionNumber && !showResults">
+                    <div v-if="(index === questionNumber && !showResults)">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-center">{{ index+1 + ' . '+ each.question }}</h3>
@@ -55,7 +54,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title text-center">
-                           {{quizCompleted}}
+                            Congratulations...! You have Sucessfully completed the QUIZ. Here is your Results
                         </h3>
                     </div>
                     <div class="panel-body">
@@ -92,6 +91,9 @@
                         <div class="row text-center" v-if="retry">
                             <button class="btn btn-primary btn-lg" @click="reTake">Retry</button>
                         </div>
+                        <div class="row text-center" v-else>
+                            <button class="btn btn-primary btn-lg" @click="reTake">Completed</button>
+                       </div>
                     </div>
                 </div>
              </transition>

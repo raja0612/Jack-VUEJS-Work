@@ -6,7 +6,6 @@ new Vue({
     questionNumber: 0,
     showResults: false,
     results: [],
-    quizCompleted: '',
     quizKeyUrl: 'https://fierce-everglades-50669.herokuapp.com/',
     //quizKeyUrl: 'http://localhost:5000/',
     retry: false
@@ -46,12 +45,10 @@ new Vue({
       console.log('userAnswers....', this.userAnswers)
       if (questionNumber === this.quiz.length - 1) {
         console.log('Need to show Results page')
-        this.showResults = true
-        this.quizCompleted = 'Congratulations...! You have Sucessfully completed the QUIZ.' +
-          'Here is your Results'
+        this.showResults = true;
       } else {
         console.log('still questions are left in quiz')
-        this.questionNumber++
+        this.questionNumber++;
       }
 
       axios.get(this.quizKeyUrl + id + '/' + answer, {

@@ -5,7 +5,9 @@ new Vue({
     quiz: [],
     questionNumber: 0,
     showResults: false,
-    results: []
+    results: [],
+    quizCompleted: '',
+    herokuURL:'https://fierce-everglades-50669.herokuapp.com/'
   },
   mounted () {
     console.log('mounted')
@@ -28,6 +30,8 @@ new Vue({
       if (questionNumber === this.quiz.length-1){
          console.log('Need to show Results page')
          this.showResults = true
+         this.quizCompleted = 'Congratulations...! You have Sucessfully completed the QUIZ.' 
+                               +'Here is your Results'
       } else {
         console.log('still questions are left in quiz')
         this.questionNumber++

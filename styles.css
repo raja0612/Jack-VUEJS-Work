@@ -12,13 +12,13 @@
         transform: rotateY(0deg);
     }
     to {
-        transform: rotateY(90deg);
+        transform: rotateY(180deg);
     }
 }
 
 @keyframes flip-in {
     from {
-        transform: rotateY(90deg);
+        transform: rotateY(180deg);
     }
     to {
         transform: rotateY(0deg);

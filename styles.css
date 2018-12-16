@@ -20,6 +20,12 @@
     font-family: 'Inconsolata', serif;
     font-size: 25px;
 }
+.jumbotron {
+    background-color: #BDB76B;
+}
+.btn-primary {
+    background-color: #BDB76B 
+}
 
 @keyframes flip-out {
     from {

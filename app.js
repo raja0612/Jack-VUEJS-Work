@@ -86,6 +86,9 @@ new Vue({
     },
     reTake() {
       location.reload();
+    },
+    completed () {
+      console.log('user cleared the quiz without any errors')
     }
   }
 

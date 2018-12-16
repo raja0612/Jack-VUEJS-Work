@@ -1,5 +1,5 @@
 .custom {
-    width: 90px !important;
+    width: 150px !important;
     margin: 10px
 }
 
@@ -13,14 +13,17 @@
 }
 .option {
     font-family: 'Inconsolata', serif;
-    font-size: 35px;
+    font-size: 40px;
   
 }
 .result {
-    font-family: 'Inconsolata', serif;
+    font-family: 'Tangerine', serif;
     font-size: 25px;
 }
 .jumbotron {
+    background-color: #BDB76B;
+}
+body {
     background-color: #BDB76B;
 }
 .btn-primary {

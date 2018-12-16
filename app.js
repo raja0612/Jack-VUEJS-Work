@@ -29,16 +29,17 @@ new Vue({
   methods: {
     shuffleQuiz() {
       // First shuffle quiz questions
-      this.quiz.sort(function () {
+      this.quiz = this.quiz.sort(function () {
         return .5 - Math.random();
       });
 
       // Then Shuffle Quiz options 
-      this.quiz.forEach(quiz => {
+      this.quiz.options  = this.quiz.forEach(quiz => {
         quiz.options.sort(function () {
           return .5 - Math.random();
         });
       });
+      console.log(' this.quiz ',  this.quiz )
     },
     userAnswer(answer, questionNumber, id, question) {
       console.log('userAnswer....', answer, questionNumber, id, question)

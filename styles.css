@@ -6,6 +6,20 @@
 .flip-leave-active {
     animation: flip-out 0.5s ease-out forwards;
 }
+.question {
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+.option {
+    font-family: 'Inconsolata', serif;
+    font-size: 35px;
+  
+}
+.result {
+    font-family: 'Inconsolata', serif;
+    font-size: 25px;
+}
 
 @keyframes flip-out {
     from {

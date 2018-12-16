@@ -43,7 +43,6 @@ new Vue({
     },
     userAnswer(answer, questionNumber, id, question) {
       console.log('userAnswer....', answer, questionNumber, id, question)
-      console.log('userAnswers....', this.userAnswers)
       if (questionNumber === this.quiz.length - 1) {
         console.log('Need to show Results page')
         this.showResults = true;

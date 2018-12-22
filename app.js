@@ -1,5 +1,10 @@
+const router = new VueRouter({
+  mode:'history' 
+})
+
 new Vue({
   el: '#app',
+  router,
   data: {
     name: 'QUIZ',
     quiz: [],
@@ -9,11 +14,18 @@ new Vue({
     quizKeyUrl: 'https://fierce-everglades-50669.herokuapp.com/',
     //quizKeyUrl: 'http://localhost:5000/',
     retry: false
+
   },
   mounted() {
-    console.log('mounted')
-    axios.get('https://raw.githubusercontent.com/raja0612/Jack-VUEJS-Work/master/quiz.json', {
-        crossdomain: true
+   console.log('mounted')
+   console.log('url parameters', this.$route.query)
+   let parameters = this.$route.query.courseId + '/'+ this.$route.query.lessonId + '.json';
+   let email = this.$route.query.email 
+   console.log('courseId & lessonId', parameters)
+   console.log('email', email)
+    axios.get('https://s3.us-east-2.amazonaws.com/mlcrunch-quiz/'+parameters, {
+        crossdomain: true,
+        
       })
       .then(response => {
         console.log('response', response.data)

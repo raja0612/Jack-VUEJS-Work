@@ -7,43 +7,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata:italic">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" 
-    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
+<body class="bg-color">
     <div id="app">
-        <div class="jumbotron">
+        <div class="jumbotron bg-color">
             <div v-for="(each,index) in quiz">
                 <transition name="flip" mode="out-in">
-                    <div v-if="(index === questionNumber && !showResults)">
-                            <p class="text-center question">{{ index+1 + ' . '+ each.question }}</p>
+                    <div v-if="(index === questionNumber && !showResults)" class="question-section">
+                            <p class="text-center">{{ index+1 + ' . '+ each.question }}</p>
                             <div class="row">
-                                <div class="col-6 col-sm-6 text-center option">
-                                    <button  type="button" class="btn btn-primary btn-sm custom" 
+                                <div class="col-6 col-sm-6 text-center">
+                                    <button  type="button" class="btn btn-primary btn-lg custom" 
                                     @click="userAnswer(each.options[0], index,each.id,each.question )">
-                                        {{ each.options[0] }}
+                                       <p>{{ each.options[0] }}</p> 
                                     </button>
                                 </div>
-                                <div class="col-6  col-sm-6 text-center option">
-                                    <button type="button" class="btn btn-primary btn-sm custom" 
+                                <div class="col-6  col-sm-6 text-center">
+                                    <button type="button" class="btn btn-primary btn-lg custom" 
                                     @click="userAnswer(each.options[1], index,each.id,each.question )">
                                         {{ each.options[1] }}
                                     </button>
                                 </div>
-                                <div class="col-6 col-sm-6 text-center option">
-                                    <button type="button" class="btn btn-primary btn-sm custom" 
+                                <div class="col-6 col-sm-6 text-center">
+                                    <button type="button" class="btn btn-primary btn-lg custom" 
                                     @click="userAnswer(each.options[2], index,each.id,each.question )">
                                         {{ each.options[2] }}
                                     </button>
                                 </div>
-                                <div class=" col-6 col-sm-6 text-center option">
-                                    <button type="button" class="btn btn-primary btn-sm custom" 
+                                <div class=" col-6 col-sm-6 text-center">
+                                    <button type="button" class="btn btn-primary btn-lg custom" 
                                     @click="userAnswer(each.options[3], index,each.id,each.question )">
                                         {{ each.options[3] }}
                                     </button>
@@ -56,32 +53,25 @@
 
             <div v-if="showResults">
              <transition name="flip" mode="out-in">
-                    <div class="result">
+                    <div>
                         <p class="text-center text-success">
                             Congratulations...! You have sucessfully completed the QUIZ. Here is your Results
                         </p>
                         <div class="row">
                             <div class="col-5 col-sm-5">Question</div>
                             <div class="col-4 col-sm-4">Your Answer</div>
-                            <div class="col-3 col-sm-3">Result</div>
                         </div>
                         <div v-for="(result,index) in results">
                             <div v-if="result.result">
                               <div class="row text-dark" role="alert">
                                 <div class="col-5 col-sm-5">{{result.question}}</div>
                                 <div class="col-4 col-sm-4">{{result.userAnswer}}</div>
-                                <div class="col-3 col-sm-3">
-                                    <i class="fas fa-smile"></i>
-                                </div>
                               </div>
                             </div>
                             <div v-else>
                               <div class="row text-danger" role="alert">
                                   <div class="col-5 col-sm-5">{{result.question}}</div>
                                   <div class="col-4 col-sm-4">{{result.userAnswer}}</div>
-                                  <div class="col-3 col-sm-3">
-                                        <i class="fas fa-frown"></i>
-                                  </div>
                               </div>   
                             </div>
                         </div>

@@ -55,13 +55,6 @@ new Vue({
     },
     userAnswer(answer, questionNumber, id,question) {
       console.log('userAnswer....', answer, questionNumber, id,question)
-      if (questionNumber === this.quiz.length - 1) {
-        console.log('Need to show Results page')
-        this.correctQuiz();
-      } else {
-        console.log('still questions are left in quiz')
-        this.questionNumber++;
-      }
       let userAnswer = {
         id: id,
         answer: answer,
@@ -70,6 +63,14 @@ new Vue({
       }
       this.userAnswers.push(userAnswer)
       console.log('userAnswers', this.userAnswers)
+      if (questionNumber === this.quiz.length - 1) {
+        console.log('Need to show Results page')
+        this.correctQuiz();
+      } else {
+        console.log('still questions are left in quiz')
+        this.questionNumber++;
+      }
+      
     },
     reTake() {
       location.reload();
@@ -78,7 +79,14 @@ new Vue({
       console.log('user cleared the quiz without any errors')
     },
     correctQuiz() {
-      axios.get(this.quizKeyUrl, {
+      // call web service with userAnswers get results
+      this.userAnswers.map((answer) => {
+        answer.result = true
+      })
+      this.showResults = true;
+      console.log('correctQuiz results',   this.userAnswers)
+
+    /*   axios.get(this.quizKeyUrl, {
           crossdomain: true,
           params: {
             userAnswers: this.userAnswers
@@ -91,7 +99,7 @@ new Vue({
         this.showResults = true;
         }).catch(error => {
           console.log(error);
-        });
+        }); */
     }
   }
 

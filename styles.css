@@ -1,30 +1,52 @@
 .custom {
-    width: 150px !important;
-    height: 50px !important;
+    width: 150px;
+    height: 50px;
     margin: 5px;
     background-color: #b2e9ed;
-    color:#333!important;
+    color:#333;
+    border: 0px;
     
 }
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #b2e9ed !important;
-}
-.jumbotron {
-    padding-top: 100px;
-    padding-bottom: 25px;
-}
-.question-section {
-    padding-top: 50px;
-}
-
-.flip-leave-active {
-    animation: flip-out 0.5s ease-out forwards;
+    background-color: #b2e9ed;
+    color: black;
+    border: 0px;     
 }
 .bg-color {
     background-color: #b2e9ed;
 }
 body {
     font-family: "Trebuchet MS","Helvetica Neue",Helvetica,Tahoma,sans-serif;
+}
+.question {
+    border-radius: 15px;
+    background-color: #b2e9ed;
+    width: 100%;
+    min-height: 20px;
+    padding: 15px 15px;
+    word-break: break-word;
+}
+
+.options {
+    border-radius: 15px;
+    width: 100%;
+    height: auto; 
+}
+
+.option {
+    border-radius: 15px;
+    background-color: #b2e9ed;
+    width: 50%;
+    /* height: auto; */
+    margin-top: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    /* margin-left: 1%; */
+    /* margin-right: 1%; */
+}
+
+.flip-leave-active {
+    animation: flip-out 0.5s ease-out forwards;
 }
 
 @keyframes flip-out {
@@ -44,3 +66,4 @@ body {
         transform: rotateY(0deg);
     }
 }
+
